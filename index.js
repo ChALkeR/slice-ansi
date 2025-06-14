@@ -2,7 +2,7 @@
 // match[1] = visible text
 // match[2] = relevant escape code
 // match[3] = skippable escape code
-const ANSI_SEQUENCE = /^(.*?)(?:(\x1b\[[^m]+m|\x1b\]8;;.*?(?:\x1b\\|\u0007))|(\x1b\[\?[0-9]+[a-zA-Z]))/;
+const ANSI_SEQUENCE = /^([\s\S]*?)(?:(\x1b\[[^m]+m|\x1b\]8;;[\s\S]*?(?:\x1b\\|\u0007))|(\x1b\[\?[0-9]+[a-zA-Z]))/;
 
 const segmenter = new Intl.Segmenter(`en`, {granularity: `grapheme`});
 
